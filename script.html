@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>My experiment</title>
     <script src="https://unpkg.com/jspsych@7.3.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
@@ -16,10 +17,10 @@
     const jsPsych = initJsPsych();
     
     /*画像の事前読み込み*/
-    //var preload = {
-    //type: jsPsychPreload,
-    //auto_preload: true
-    //}
+    var preload = {
+    type: jsPsychPreload,
+    auto_preload: true
+    }
     
     /*参加者のIDを作成，ファイル名を設定*/
     const subject_id = jsPsych.randomization.randomID(10);
@@ -28,7 +29,7 @@
     /*課題*/
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: '<img src="image.jpg"></img>'
+      stimulus: 'image.jpg'
     }
     
     /*データを保存*/  
