@@ -15,6 +15,12 @@
     /*jsPsychの初期化*/
     const jsPsych = initJsPsych();
     
+    /*画像の事前読み込み*/
+    let preload = {
+    type: jsPsychPreload,
+    auto_preload: true
+    }
+    
     /*参加者のIDを作成，ファイル名を設定*/
     const subject_id = jsPsych.randomization.randomID(10);
     const filename = '${subject_id}.csv';
@@ -22,7 +28,7 @@
     /*課題*/
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'Hello world!'
+      stimulus: 'image.jpg'
     }
     
     /*データを保存*/  
