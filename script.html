@@ -16,10 +16,10 @@
     const jsPsych = initJsPsych();
     
     /*画像の事前読み込み*/
-    var preload = {
-    type: jsPsychPreload,
-    auto_preload: true
-    }
+    //var preload = {
+    //type: jsPsychPreload,
+    //auto_preload: true
+    //}
     
     /*参加者のIDを作成，ファイル名を設定*/
     const subject_id = jsPsych.randomization.randomID(10);
@@ -28,7 +28,7 @@
     /*課題*/
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'image.jpg'
+      stimulus: '<img src="https://github.com/Hatsuyuki403/test_picture/blob/4ee812a76db30dfc41b8dcf84778b894903d8997/image.jpg"></img>'
     }
     
     /*データを保存*/  
