@@ -25,15 +25,15 @@
       stimulus: 'Hello world!'
     }
     
-    /*データを保存*/
+    /*データを保存*/  
     const save_data = {
       type: jsPsychPipe,
       action: "save",
-      experiment_id: "AfPzVZbGrOFy",
+      experiment_id: "XTi3XxzCNhf2",
       filename: filename,
       data_string: ()=>jsPsych.data.get().csv()
     };
-
+  
     jsPsych.run([hello_trial, save_data]);
   </script>
   </body>
