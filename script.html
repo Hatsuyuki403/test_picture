@@ -6,7 +6,6 @@
     <script src="https://unpkg.com/jspsych@7.3.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
-    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.0.0"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <link href="https://unpkg.com/jspsych@7.3.2/css/jspsych.css" rel="stylesheet" type="text/css" />
   </head>
@@ -20,7 +19,7 @@
     var preload = {
     type: jsPsychPreload,
     auto_preload: true
-    }
+    };
     
     /*参加者のIDを作成，ファイル名を設定*/
     const subject_id = jsPsych.randomization.randomID(10);
@@ -30,7 +29,7 @@
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: 'image.jpg'
-    }
+    };
     
     /*データを保存*/  
     const save_data = {
@@ -39,7 +38,7 @@
       experiment_id: "szWI0ajNvarX",
       filename: filename,
       data_string: ()=>jsPsych.data.get().csv()
-    }
+    };
   
     jsPsych.run([preload, hello_trial, save_data]);
   </script>
