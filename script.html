@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
-    <link href="https://unpkg.com/jspsych@7.3.2/css/jspsych.css" rel="stylesheet" type="text/css" />
+    <link href="https://unpkg.com/jspsych@7.3.2/css/jspsych.css" rel="stylesheet" type="text/css"/>
   </head>
   
   <body>
@@ -40,7 +40,7 @@
       data_string: ()=>jsPsych.data.get().csv()
     }
   
-    jsPsych.run([hello_trial, save_data]);
+    jsPsych.run([preload, hello_trial, save_data]);
   </script>
   </body>
 </html>
