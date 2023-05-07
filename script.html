@@ -29,7 +29,7 @@
     /*課題*/
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
-      stimulus: 'image.jpg'
+      stimulus: 'https://github.com/Hatsuyuki403/test_picture/blob/ec6c0614189cb86017ab5b58c3df0ed9f599501a/image.jpg'
     }
     
     /*データを保存*/  
@@ -41,7 +41,7 @@
       data_string: ()=>jsPsych.data.get().csv()
     };
   
-    jsPsych.run([preload, hello_trial, save_data]);
+    jsPsych.run([hello_trial, save_data]);
   </script>
   </body>
 </html>
