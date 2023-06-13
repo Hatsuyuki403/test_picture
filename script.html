@@ -7,31 +7,32 @@
     <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.2"></script>
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
+    <script src="https://github.com/Hatsuyuki403/test_picture/blob/e3c55b60d70bb97ba1c79881d325651abb5617de/jspsych-psychophysics-3.6.0/jspsych-psychophysics.js"></script>
     <link href="https://unpkg.com/jspsych@7.3.2/css/jspsych.css" rel="stylesheet" type="text/css"/>
   </head>
   
   <body>
   <script>
-    /*jsPsychの初期化*/
+    // jsPsychの初期化
     const jsPsych = initJsPsych();
     
-    /*画像の事前読み込み*/
+    // 画像の事前読み込み
     var preload = {
     type: jsPsychPreload,
     auto_preload: true
     }
     
-    /*参加者のIDを作成，ファイル名を設定*/
+    // 参加者のIDを作成，ファイル名を設定
     const subject_id = jsPsych.randomization.randomID(10);
     const filename = `${subject_id}.csv`;
     
-    /*課題*/
+    // 課題
     const hello_trial = {
       type: jsPsychHtmlKeyboardResponse,
       stimulus: `<img src="image.jpg"></img>`
     }
     
-    /*データを保存*/  
+    // データを保存  
     const save_data = {
       type: jsPsychPipe,
       action: "save",
@@ -39,6 +40,7 @@
       filename: filename,
       data_string: ()=>jsPsych.data.get().csv()
     }
+  
   
     jsPsych.run([preload, hello_trial, save_data]);
   </script>
