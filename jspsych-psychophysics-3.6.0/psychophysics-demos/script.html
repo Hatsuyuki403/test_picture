@@ -10,14 +10,15 @@
     <script src="../jspsych-psychophysics.js"></script>
     <link rel="stylesheet" href="../jspsych-dist/dist/jspsych.css"></link>
   </head>
-  <head>
-
-</head>
   
   <body>
   <script>
     // jsPsychの初期化
-    const jsPsych = initJsPsych();
+    const jsPsych = initJsPsych({
+        on_finish: function() {
+            jsPsych.data.displayData();
+        }
+    })
     
     // 参加者のIDを作成，ファイル名を設定
     const subject_id = jsPsych.randomization.randomID(10);
@@ -45,18 +46,9 @@
       canvas_height: 800,
       background_color: '#008000',
     }
-    
-    // データを保存  
-    const save_data = {
-      type: jsPsychPipe,
-      action: "save",
-      experiment_id: "szWI0ajNvarX",
-      filename: filename,
-      data_string: ()=>jsPsych.data.get().csv()
-    }
   
   
-    jsPsych.run([preload, trial_pp, save_data]);
+    jsPsych.run([preload, trial_pp]);
   </script>
   </body>
 </html>
