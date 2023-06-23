@@ -54,7 +54,30 @@
         background_color: '#008000', // The HEX color means green.
     }
 
-    jsPsych.run([instruction, trial])
+    // psychophysicsプラグインのテスト
+    // 刺激
+    const rect_object2 = {
+      obj_type: 'rect',
+      startX: 200, // キャンバス内での位置
+      startY: 150,
+      width: 150, // 大きさ
+      height: 150,
+      line_color: '#ffffff',
+      fill_color: '#ffffff',
+      show_start_time: 500 // トライアル開始から刺激呈示までの時間 (ms)
+    }
+    
+    // rectangle刺激の呈示
+    const trial_pp = {
+      type: jsPsychPsychophysics,
+      stimuli: rect_object2,
+      choices: ['f', 'j'],
+      canvas_width: 1000,
+      canvas_height: 800,
+      background_color: '#008000',
+    }
+
+    jsPsych.run([instruction, trial, trial_pp])
     
 </script>
 
